@@ -30,19 +30,32 @@
 
     <script>
       let hero = document.getElementById('hero');
-      let heroPos = 0;
+      let heroPosX = 0;
+      let heroPosY = 0;
 
       function anim(e){
+        //move up
+        if (e.keyCode == 38) {
+          heroPosY -=2;
+          hero.style.top = heroPosY + 'px';
+        }
+
+        //move down
+        if (e.keyCode == 40) {
+          heroPosY +=2;
+          hero.style.top = heroPosY + 'px';
+        }
+
         //move left
         if (e.keyCode == 37) {
-          heroPos -=2;
-          hero.style.left = heroPos + 'px';
+          heroPosX -=2;
+          hero.style.left = heroPosX + 'px';
         }
 
         //move right
         if (e.keyCode == 39) {
-          heroPos +=2;
-          hero.style.left = heroPos + 'px';
+          heroPosX +=2;
+          hero.style.left = heroPosX + 'px';
         }
       }
 
