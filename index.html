@@ -6,19 +6,18 @@
     <style>
 
     #container{
-      height: 400px;
-      width: 600px;
-      outline: 1px solid black;
+      height: 200px;
+      width: 200px;
+      outline: 15px solid black;
       position: relative;
     }
 
     #hero{
       position: absolute;
-      height: 50px;
-      width: 50px;
+      height: 25px;
+      width: 25px;
       outline: 2px solid black;
       background-color: red;
-
     }
 
     </style>
@@ -30,14 +29,24 @@
     </div>
 
     <script>
-      var hero = document.getElementById('hero');
-      var container = document.getElementById('container');
+      let hero = document.getElementById('hero');
+      let heroPos = 0;
 
       function anim(e){
-        alert(e.keyCode)
+        //move left
+        if (e.keyCode == 37) {
+          heroPos -=2;
+          hero.style.left = heroPos + 'px';
+        }
+
+        //move right
+        if (e.keyCode == 39) {
+          heroPos +=2;
+          hero.style.left = heroPos + 'px';
+        }
       }
 
-      document.onkeydown = anim
+      document.onkeydown = anim;
 
     </script>
 
